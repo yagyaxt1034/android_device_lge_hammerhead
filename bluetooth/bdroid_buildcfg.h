@@ -21,4 +21,7 @@
 
 #define BLE_VND_INCLUDED FALSE
 #define BTM_BLE_ADV_TX_POWER {-21, -15, -7, 1, 9}
+
+#define BTIF_HF_WBS_PREFERRED FALSE
+
 #endif
