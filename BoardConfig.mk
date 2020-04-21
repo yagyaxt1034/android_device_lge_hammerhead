@@ -150,6 +150,7 @@ endif
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/libRSDriver_adreno.so|libshim_rs_adreno.so \
     /system/vendor/bin/mpdecision|libshim_atomic.so \
     /system/lib/libril-qc-qmi-1.so|libshim_ril.so
 
