@@ -303,7 +303,6 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_rs_adreno \
     libshim_atomic
 
 # RIL shims
