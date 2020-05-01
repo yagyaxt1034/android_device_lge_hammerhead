@@ -26,4 +26,6 @@
 #define BTM_WBS_INCLUDED TRUE
 #define BTIF_HF_WBS_PREFERRED FALSE
 
+#define BTM_PM_DEBUG TRUE
+
 #endif
