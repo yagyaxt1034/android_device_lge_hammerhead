@@ -150,6 +150,9 @@
 /sys/devices/mdp(.*)/qcom,mdss_fb_primary(.*)/leds(/.*)?                             u:object_r:sysfs_leds:s0
 /sys/devices/mdp(.*)/qcom,mdss_fb_primary(.*)/leds/lcd-backlight/brightness          u:object_r:sysfs_leds:s0
 /sys/devices/mdp(.*)/qcom,mdss_fb_primary(.*)/leds/lcd-backlight/max_brightness      u:object_r:sysfs_leds:s0
+# TimeKeep
+/sys/devices/qpnp-rtc-[0-9]+/rtc/rtc0(/.*)?         u:object_r:sysfs_rtc:s0
+/(system/vendor|vendor)/bin/timekeep                u:object_r:timekeep_exec:s0
 
 # sysfs - sysfs_power_management
 /sys/devices/(fe20|fc88|fdce)0000\.qcom,(lpass|mss|venus)/subsys[0-2]/restart_level u:object_r:sysfs_power_management:s0
