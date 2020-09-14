@@ -30,7 +30,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 maxcpus=4 msm_watchdog_v2.enable=1 androidboot.bootdevice=msm_sdcc.1
-BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
@@ -115,10 +115,11 @@ TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
 # QCOM selinux policies
-include device/qcom/sepolicy-legacy/sepolicy.mk
+# include device/qcom/sepolicy-legacy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
-BOARD_SEPOLICY_M4DEFS += vensys=\(vendor\|system/vendor\)
+# BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
+# BOARD_SEPOLICY_M4DEFS += vensys=\(vendor\|system/vendor\)
+SELINUX_IGNORE_NEVERALLOWS := true
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/lge/hammerhead/sepolicy/private
