@@ -299,6 +299,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.hh
 
+# Qualcomm
+PRODUCT_PACKAGES += \
+    libaudioclient_shim
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
 
