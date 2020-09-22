@@ -33,14 +33,6 @@ PRODUCT_COPY_FILES += \
 #     device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.hammerhead \
 
 
-# Init
-PRODUCT_PACKAGES += \
-    fstab.hammerhead \
-    init.hammerhead.rc \
-    init.hammerhead.usb.rc \
-    init.recovery.hammerhead.rc \
-    ueventd.hammerhead.rc
-
 # Input device files for hammerhead
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
@@ -243,6 +235,17 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-service \
     libgps.utils \
     gps.msm8974
+
+# HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
+# Init
+PRODUCT_PACKAGES += \
+    fstab.hammerhead \
+    init.hammerhead.rc \
+    init.hammerhead.usb.rc \
+    init.recovery.hammerhead.rc \
+    ueventd.hammerhead.rc
 
 # NFC packages
 PRODUCT_PACKAGES += \
