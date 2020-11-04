@@ -27,29 +27,34 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
-    device/lge/hammerhead/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
-    device/lge/hammerhead/init.recovery.hammerhead.rc:root/init.recovery.hammerhead.rc \
-    device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_ROOT)/fstab.hammerhead \
-    device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_RAMDISK)/fstab.hammerhead \
-    device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.hammerhead \
-    device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
+# PRODUCT_COPY_FILES += \
+#     device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_ROOT)/fstab.hammerhead \
+#     device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_RAMDISK)/fstab.hammerhead \
+#     device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.hammerhead \
+
+
+# Init
+PRODUCT_PACKAGES += \
+    fstab.hammerhead \
+    init.hammerhead.rc \
+    init.hammerhead.usb.rc \
+    init.recovery.hammerhead.rc \
+    ueventd.hammerhead.rc
 
 # Input device files for hammerhead
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/lge/hammerhead/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm \
-    device/lge/hammerhead/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
-    device/lge/hammerhead/qpnp_pon.kcm:system/usr/keychars/qpnp_pon.kcm \
-    device/lge/hammerhead/Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl \
-    device/lge/hammerhead/Button_Jack.kcm:system/usr/keychars/msm8974-taiko-mtp-snd-card_Button_Jack.kcm \
-    device/lge/hammerhead/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-    device/lge/hammerhead/hs_detect.kcm:system/usr/keychars/hs_detect.kcm
+    device/lge/hammerhead/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/lge/hammerhead/keylayout/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm \
+    device/lge/hammerhead/keylayout/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
+    device/lge/hammerhead/keylayout/qpnp_pon.kcm:system/usr/keychars/qpnp_pon.kcm \
+    device/lge/hammerhead/keylayout/Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl \
+    device/lge/hammerhead/keylayout/Button_Jack.kcm:system/usr/keychars/msm8974-taiko-mtp-snd-card_Button_Jack.kcm \
+    device/lge/hammerhead/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+    device/lge/hammerhead/keylayout/hs_detect.kcm:system/usr/keychars/hs_detect.kcm
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/touch_dev.idc:system/usr/idc/touch_dev.idc
+    device/lge/hammerhead/keylayout/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -57,20 +62,20 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    device/lge/hammerhead/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    device/lge/hammerhead/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/lge/hammerhead/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/lge/hammerhead/configs/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    device/lge/hammerhead/configs/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/lge/hammerhead/configs/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/lge/hammerhead/media_codecs.xml:system/etc/media_codecs.xml \
-    device/lge/hammerhead/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    device/lge/hammerhead/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    device/lge/hammerhead/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/lge/hammerhead/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    device/lge/hammerhead/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+    device/lge/hammerhead/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/bluetooth/BCM4339_003.001.009.0079.0339.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335c0.hcd
@@ -103,7 +108,7 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+    device/lge/hammerhead/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
@@ -113,7 +118,7 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/thermal-engine-8974.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8974.conf
+    device/lge/hammerhead/configs/thermal-engine-8974.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8974.conf
 
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
@@ -230,7 +235,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/gps.conf:system/etc/gps.conf
+    device/lge/hammerhead/configs/gps.conf:system/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \

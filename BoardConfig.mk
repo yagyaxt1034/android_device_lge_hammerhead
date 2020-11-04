@@ -124,8 +124,8 @@ SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/lge/hammerhead/sepolicy/private
 
-DEVICE_MANIFEST_FILE := device/lge/hammerhead/manifest.xml
-DEVICE_MATRIX_FILE := device/lge/hammerhead/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := device/lge/hammerhead/configs/manifest.xml
+DEVICE_MATRIX_FILE := device/lge/hammerhead/configs/compatibility_matrix.xml
 
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
