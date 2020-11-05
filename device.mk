@@ -25,7 +25,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # APEX
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
+    $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
 # PRODUCT_COPY_FILES += \
 #     device/lge/hammerhead/fstab.hammerhead:$(TARGET_COPY_OUT_ROOT)/fstab.hammerhead \
@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    device/lge/hammerhead/configs/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 
 # Camera
