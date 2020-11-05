@@ -17,7 +17,7 @@
 # Temporary build configs
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_USES_LOCAL_COPY_HEADERS := true
-
+DO_NOT_CHECK_MANUAL_BINDER_INTERFACES := true
 PLATFORM_PATH := device/lge/hammerhead
 
 # Platform

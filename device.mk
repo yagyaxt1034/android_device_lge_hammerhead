@@ -279,7 +279,7 @@ PRODUCT_PACKAGES += \
     libaudioclient_shim
 
 # Qualcomm HAL
-$(call project-set-path,qcom-display,$(LOCAL_PATH)caf/display)
+# $(call project-set-path,qcom-display,$(LOCAL_PATH)/display)
 
 # Ramdisk
 PRODUCT_PACKAGES += \
