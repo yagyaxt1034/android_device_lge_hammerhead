@@ -121,6 +121,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# Low RAM
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 DEVICE_PACKAGE_OVERLAYS := \
     device/lge/hammerhead/overlay
 
